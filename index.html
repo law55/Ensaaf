@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>إنصاف - الموقع القانوني</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <img src="images/logo.png" alt="شعار إنصاف">
+    </header>
+
+    <div class="tabs-container">
+        <div class="tabs">
+            <div class="tab active" onclick="showSection('laws')">القوانين</div>
+            <div class="tab" onclick="showSection('simplified')">القانون لغير القانونيين</div>
+            <div class="tab" onclick="showSection('digest')">الموجز القانوني</div>
+            <div class="tab" onclick="showSection('memos')">مذكرات قانونية</div>
+        </div>
+    </div>
+
+    <div id="laws" class="content-section active">
+        <div class="card">قانون العمل</div>
+        <div class="card">قانون الأحوال الشخصية</div>
+        <div class="card">قانون العقوبات</div>
+    </div>
+
+    <div id="simplified" class="content-section">
+        <div class="card">دليل حقوق المستأجر</div>
+        <div class="card">إجراءات الطلاق خطوة بخطوة</div>
+        <div class="card">حقوقك عند الشراء عبر الإنترنت</div>
+    </div>
+
+    <div id="digest" class="content-section">
+        <div class="card">ملخص تعديلات نظام العمل الجديد</div>
+        <div class="card">أبرز أحكام محكمة التمييز</div>
+        <div class="card">تحديثات نظام المرافعات الشرعية</div>
+    </div>
+
+    <div id="memos" class="content-section">
+        <div class="card">مذكرة دفاع في قضية فصل تعسفي</div>
+        <div class="card">مذكرة طلب تنفيذ حكم قضائي</div>
+        <div class="card">مذكرة اعتراض على حكم ابتدائي</div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
